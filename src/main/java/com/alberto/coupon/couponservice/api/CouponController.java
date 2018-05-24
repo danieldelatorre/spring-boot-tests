@@ -26,9 +26,10 @@ class CouponController {
     @RequestMapping(method = RequestMethod.POST, value = "/calculate",  consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<CouponAppliedResponse> calculateCoupon(@RequestBody ApplyCouponRequest request) {
-        List<Product> products = convertToDomain(request.getProducts());
-        String sanitizedCouponCode = convertToDomain(request);
-
+        //List<Product> products = convertToDomain(request.getProducts());
+        List<Product> products = request.getProducts();
+        //String sanitizedCouponCode = convertToDomain(request);
+        String sanitizedCouponCode = request.getCode();
         Double result = calculationService.calculate(sanitizedCouponCode, products);
 
         return ResponseEntity.ok()
@@ -36,13 +37,13 @@ class CouponController {
 
     }
 
-    private String convertToDomain(@RequestBody ApplyCouponRequest request) {
-        return request.getCode().toUpperCase().trim();
-    }
-
-    private List<Product> convertToDomain(List<APIProduct> products) {
-        return products.stream()
-                .map(p -> new Product(p.getCode(), p.getPrice()))
-                .collect(Collectors.toList());
-    }
+//    private String convertToDomain(@RequestBody ApplyCouponRequest request) {
+//        return request.getCode().toUpperCase().trim();
+//    }
+//
+//    private List<Product> convertToDomain(List<APIProduct> products) {
+//        return products.stream()
+//                .map(p -> new Product(p.getCode(), p.getPrice()))
+//                .collect(Collectors.toList());
+//    }
 }

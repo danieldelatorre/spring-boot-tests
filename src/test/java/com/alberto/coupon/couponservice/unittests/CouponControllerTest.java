@@ -1,6 +1,7 @@
 package com.alberto.coupon.couponservice.unittests;
 
 import com.alberto.coupon.couponservice.CouponCalculationService;
+import com.alberto.coupon.couponservice.Product;
 import com.alberto.coupon.couponservice.api.APIProduct;
 import com.alberto.coupon.couponservice.api.ApplyCouponRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,9 +36,9 @@ public class CouponControllerTest {
     @MockBean
     private CouponCalculationService calculationService;
 
-    private List<APIProduct> products = Arrays.asList(
-            new APIProduct("camisa", 3.0),
-            new APIProduct("traje", 12.0));
+    private List<Product> products = Arrays.asList(
+            new Product("camisa", 3.0),
+            new Product("traje", 12.0));
 
     @Test
     public void existingDiscountCode_returns_discounted_total() throws Exception {

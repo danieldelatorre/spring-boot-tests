@@ -4,6 +4,10 @@ public class Product {
     private String code;
     private Double price;
 
+    public Product(){
+
+    }
+
     public Product(String code, Double price) {
         this.code = code;
         this.price = price;

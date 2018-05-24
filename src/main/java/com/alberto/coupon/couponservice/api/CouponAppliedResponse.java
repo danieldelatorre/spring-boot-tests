@@ -9,7 +9,7 @@ public class CouponAppliedResponse implements Serializable {
     private Double total;
 
     @JsonCreator
-    public CouponAppliedResponse(@JsonProperty("total") Double total) {
+    public CouponAppliedResponse(@JsonProperty("total")Double total) {
         this.total = total;
     }
 
