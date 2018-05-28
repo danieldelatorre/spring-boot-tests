@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.List;
-public class ApplyCouponRequest implements Serializable {
+public class ApplyCouponRequest{
     private String code;
     private List<Product> products;
 

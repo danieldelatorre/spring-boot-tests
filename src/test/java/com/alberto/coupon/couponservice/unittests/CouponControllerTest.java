@@ -2,7 +2,6 @@ package com.alberto.coupon.couponservice.unittests;
 
 import com.alberto.coupon.couponservice.CouponCalculationService;
 import com.alberto.coupon.couponservice.Product;
-import com.alberto.coupon.couponservice.api.APIProduct;
 import com.alberto.coupon.couponservice.api.ApplyCouponRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;

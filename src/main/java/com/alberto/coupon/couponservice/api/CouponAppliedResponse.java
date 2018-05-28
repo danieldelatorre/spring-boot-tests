@@ -5,11 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
-public class CouponAppliedResponse implements Serializable {
+public class CouponAppliedResponse {
     private Double total;
 
-    @JsonCreator
-    public CouponAppliedResponse(@JsonProperty("total")Double total) {
+    public CouponAppliedResponse(){
+
+    }
+    //@JsonCreator
+    public CouponAppliedResponse(/*@JsonProperty("total")*/Double total) {
         this.total = total;
     }
 
